@@ -752,7 +752,8 @@
                                     <p id="modal-nationality" class="text-xl font-display font-bold text-club-deep">
                                         BRASIL</p>
                                 </div>
-                                <img src="https://flagcdn.com/br.svg" class="w-8 h-6 object-cover shadow-sm mb-1">
+                                <img id="modal-flag-img" src="https://flagcdn.com/br.svg"
+                                    class="w-8 h-6 object-cover shadow-sm mb-1">
                             </div>
 
                             <!-- Info Item -->
@@ -860,6 +861,7 @@
                 birth: '24/12/1987',
                 location: 'ROVANIEMI, FINLÂNDIA',
                 nationality: 'FINLÂNDIA',
+                flag: 'fi',
                 joined: '24/12/2023'
             },
             'mariah': {
@@ -873,6 +875,7 @@
                 birth: '12/05/1998',
                 location: 'SÃO PAULO, BRASIL',
                 nationality: 'BRASIL',
+                flag: 'br',
                 joined: '24/12/2023'
             },
             'rochedo': {
@@ -932,6 +935,7 @@
             document.getElementById('modal-birth').innerText = data.birth;
             document.getElementById('modal-location').innerText = data.location;
             document.getElementById('modal-nationality').innerText = data.nationality;
+            document.getElementById('modal-flag-img').src = `https://flagcdn.com/${data.flag || 'br'}.svg`;
             document.getElementById('modal-pos').innerText = data.pos;
             document.getElementById('modal-joined').innerText = data.joined;
 
