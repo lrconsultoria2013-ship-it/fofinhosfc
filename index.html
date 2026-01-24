@@ -159,12 +159,13 @@
                     </div>
                 </a>
 
-                <!-- LINKS (DESKTOP) -->
                 <div class="hidden md:flex items-center gap-8">
                     <a href="#home"
                         class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Início</a>
                     <a href="#about"
                         class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">História</a>
+                    <a href="#anthem"
+                        class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Hino</a>
                     <a href="#squad"
                         class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Elenco</a>
 
@@ -181,13 +182,14 @@
             </div>
         </div>
 
-        <!-- MOBILE MENU -->
         <div id="mobile-menu"
             class="hidden absolute top-full left-0 w-full bg-club-deep/95 backdrop-blur-xl border-b border-white/10 py-4 md:hidden">
             <a href="#home"
                 class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Início</a>
             <a href="#about"
                 class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">História</a>
+            <a href="#anthem"
+                class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Hino</a>
             <a href="#squad"
                 class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Elenco</a>
         </div>
@@ -225,7 +227,7 @@
                 do futebol com paixão, técnica e o rugido que ecoa nas arquibancadas.
             </p>
 
-            <div class="reveal delay-[300ms] flex flex-col md:flex-row justify-center gap-4">
+            <div class="reveal delay-[300ms] flex flex-col md:flex-row justify-center gap-4 relative z-20">
                 <button onclick="document.getElementById('squad').scrollIntoView()"
                     class="group relative px-8 py-4 bg-club-gold text-club-deep font-bold font-display text-xl uppercase tracking-wider overflow-hidden transition-all hover:shadow-glow hover:-translate-y-1">
                     <span class="relative z-10 flex items-center gap-2">Conhecer Elenco <i
@@ -234,9 +236,9 @@
             </div>
         </div>
 
-        <!-- Scroll Indicator -->
+        <!-- Scroll Indicator (Ajustado para não colidir) -->
         <div
-            class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/30 text-xs uppercase tracking-widest">
+            class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce text-white/30 text-xs uppercase tracking-widest pointer-events-none">
             Role para descobrir
         </div>
     </header>
