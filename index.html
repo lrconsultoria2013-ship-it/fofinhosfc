@@ -632,71 +632,134 @@
     <!-- =========================================================================
          PLAYER MODAL (Pop-up de Detalhes)
     ========================================================================== -->
+    <!-- =========================================================================
+         PLAYER MODAL (DESIGN OFICIAL - BIO & INFO)
+    ========================================================================== -->
     <div id="player-modal" class="fixed inset-0 z-[100] hidden">
         <!-- Overlay Escuro -->
-        <div class="absolute inset-0 bg-black/90 backdrop-blur-md" onclick="closePlayerModal()"></div>
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePlayerModal()"></div>
 
         <!-- Conteúdo do Modal -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl px-4">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-4 h-[90vh]">
             <div
-                class="bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row max-h-[90vh] md:max-h-[600px] animate-[slideUp_0.5s_ease-out]">
+                class="bg-white rounded-lg shadow-2xl flex flex-col h-full overflow-hidden animate-[slideUp_0.4s_ease-out]">
 
-                <!-- Lado Esquerdo: Foto e Identidade -->
-                <div class="w-full md:w-2/5 bg-club-deep relative overflow-hidden flex items-end justify-center pt-10">
-                    <div class="absolute top-0 right-0 p-8 text-club-gold/10 font-display font-bold text-9xl leading-none z-0"
-                        id="modal-number-bg">00</div>
-                    <img id="modal-img" src=""
-                        class="relative z-10 w-auto h-[90%] object-cover object-top mask-image-gradient">
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-club-deep to-transparent h-20 z-20">
+                <!-- HEADER (Foto + Nome) -->
+                <div class="h-1/3 bg-club-deep relative flex items-end pb-6 px-8 border-b-4 border-club-gold">
+                    <!-- Background Pattern -->
+                    <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20">
+                    </div>
+                    <div
+                        class="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-club-bright/20 to-transparent">
+                    </div>
+
+                    <div class="relative z-10 flex items-end gap-6 w-full">
+                        <div
+                            class="w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-white overflow-hidden shadow-2xl -mb-12 bg-gray-200">
+                            <img id="modal-img" src="" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mb-2">
+                            <div class="flex items-center gap-3 mb-1">
+                                <span id="modal-number-header"
+                                    class="text-6xl font-display font-bold text-club-gold text-outline-sm">00</span>
+                                <div class="flex flex-col">
+                                    <h2 id="modal-name"
+                                        class="text-4xl md:text-5xl font-display font-bold text-white uppercase leading-none tracking-tight">
+                                        NOME</h2>
+                                    <h3 id="modal-nickname"
+                                        class="text-xl md:text-2xl font-display font-bold text-club-bright uppercase tracking-widest">
+                                        SOBRENOME</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="closePlayerModal()"
+                            class="ml-auto mb-8 w-10 h-10 text-white/50 hover:text-white transition-colors">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
                     </div>
                 </div>
 
-                <!-- Lado Direito: Informações -->
-                <div class="w-full md:w-3/5 p-8 md:p-12 overflow-y-auto">
-                    <div class="flex justify-between items-start mb-6">
-                        <div>
-                            <span id="modal-pos"
-                                class="inline-block px-3 py-1 bg-club-gold text-club-deep text-xs font-bold uppercase tracking-widest rounded-full mb-2">Posição</span>
-                            <h2 id="modal-name"
-                                class="text-5xl font-display font-bold text-club-deep uppercase leading-none">NOME</h2>
-                            <h3 id="modal-nickname" class="text-3xl font-display font-bold text-club-bright uppercase">
-                                SOBRENOME</h3>
+                <!-- BODY (2 Colunas) -->
+                <div class="flex-1 flex flex-col md:flex-row overflow-y-auto bg-white">
+
+                    <!-- COLUNA ESQUERDA: BIOGRAFIA -->
+                    <div class="w-full md:w-7/12 p-8 md:p-12 border-r border-gray-100">
+                        <h4 class="font-display font-bold text-club-bright uppercase text-2xl mb-6">BIOGRAFIA</h4>
+
+                        <h5 id="modal-bio-title" class="font-bold text-club-deep text-lg uppercase mb-4">DEFENSOR
+                            CORAJOSO E DECISIVO...</h5>
+                        <div id="modal-bio" class="text-gray-600 space-y-4 text-justify leading-relaxed font-light">
+                            <!-- Texto inserido via JS -->
                         </div>
-                        <button onclick="closePlayerModal()"
-                            class="w-10 h-10 rounded-full bg-gray-100 hover:bg-red-500 hover:text-white flex items-center justify-center transition-colors">
-                            <i class="fas fa-times"></i>
+
+                        <button
+                            class="mt-8 px-8 py-3 bg-transparent border border-club-deep text-club-deep font-bold uppercase tracking-widest hover:bg-club-deep hover:text-white transition-all text-xs">
+                            LEIA MAIS
                         </button>
                     </div>
 
-                    <div class="grid grid-cols-3 gap-4 mb-8">
-                        <div class="text-center p-4 bg-gray-50 rounded-xl">
-                            <span class="block text-3xl font-display font-bold text-club-deep" id="modal-games">0</span>
-                            <span class="text-xs text-gray-500 uppercase font-bold">Jogos</span>
-                        </div>
-                        <div class="text-center p-4 bg-gray-50 rounded-xl">
-                            <span class="block text-3xl font-display font-bold text-club-deep" id="modal-goals">0</span>
-                            <span class="text-xs text-gray-500 uppercase font-bold">Gols</span>
-                        </div>
-                        <div class="text-center p-4 bg-gray-50 rounded-xl">
-                            <span class="block text-3xl font-display font-bold text-club-deep" id="modal-age">0</span>
-                            <span class="text-xs text-gray-500 uppercase font-bold">Idade</span>
-                        </div>
-                    </div>
+                    <!-- COLUNA DIREITA: INFORMAÇÕES -->
+                    <div class="w-full md:w-5/12 p-8 md:p-12 bg-gray-50/50">
+                        <h4 class="font-display font-bold text-club-bright uppercase text-2xl mb-8">INFORMAÇÕES</h4>
 
-                    <h4 class="font-bold text-club-deep uppercase tracking-widest text-sm mb-3">Biografia</h4>
-                    <p id="modal-bio" class="text-gray-600 leading-relaxed mb-8 text-sm">Descrição do jogador...</p>
+                        <div class="space-y-6">
+                            <!-- Info Item -->
+                            <div class="border-b border-gray-200 pb-2">
+                                <p class="text-xs text-gray-400 font-bold uppercase mb-1">Data de Nascimento</p>
+                                <p id="modal-birth" class="text-xl font-display font-bold text-club-deep">01/01/2000</p>
+                            </div>
 
-                    <div class="flex gap-4">
-                        <a href="#"
-                            class="flex-1 py-3 bg-club-deep text-white font-bold text-center uppercase tracking-widest hover:bg-club-gold hover:text-club-deep transition-colors rounded-lg">
-                            <i class="fab fa-instagram mr-2"></i> Seguir
-                        </a>
-                        <a href="#"
-                            class="flex-1 py-3 border border-gray-200 text-gray-600 font-bold text-center uppercase tracking-widest hover:bg-gray-50 transition-colors rounded-lg">
-                            <i class="fas fa-chart-bar mr-2"></i> Stats
-                        </a>
+                            <!-- Info Item -->
+                            <div class="border-b border-gray-200 pb-2">
+                                <p class="text-xs text-gray-400 font-bold uppercase mb-1">Localização</p>
+                                <p id="modal-location" class="text-xl font-display font-bold text-club-deep">RIO DE
+                                    JANEIRO, BRASIL</p>
+                            </div>
+
+                            <!-- Info Item (Com Bandeira) -->
+                            <div class="border-b border-gray-200 pb-2 flex justify-between items-end">
+                                <div>
+                                    <p class="text-xs text-gray-400 font-bold uppercase mb-1">Nacionalidade</p>
+                                    <p id="modal-nationality" class="text-xl font-display font-bold text-club-deep">
+                                        BRASIL</p>
+                                </div>
+                                <img src="https://flagcdn.com/br.svg" class="w-8 h-6 object-cover shadow-sm mb-1">
+                            </div>
+
+                            <!-- Info Item -->
+                            <div class="border-b border-gray-200 pb-2">
+                                <p class="text-xs text-gray-400 font-bold uppercase mb-1">Posição</p>
+                                <p id="modal-pos" class="text-xl font-display font-bold text-club-deep">ATACANTE</p>
+                            </div>
+
+                            <!-- Info Item -->
+                            <div class="border-b border-gray-200 pb-2">
+                                <p class="text-xs text-gray-400 font-bold uppercase mb-1">Cidade Unida</p>
+                                <p id="modal-joined" class="text-xl font-display font-bold text-club-deep">24/12/2023
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- FOOTER (HONRAS) -->
+                <div
+                    class="h-24 bg-white border-t border-gray-100 px-8 md:px-12 flex items-center justify-between shrink-0">
+                    <div class="flex flex-col">
+                        <span class="text-xs text-gray-400 font-bold uppercase">HONRAS</span>
+                        <span id="modal-name-footer"
+                            class="font-display font-bold text-club-bright text-xl uppercase leading-none">NOME</span>
+                    </div>
+
+                    <div class="flex gap-6 opacity-80" id="modal-trophies">
+                        <!-- Troféus (Inseridos via JS ou Estáticos) -->
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-trophy text-club-gold text-2xl mb-1"></i>
+                            <span class="text-[10px] font-bold text-club-deep">23/24</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -735,7 +798,7 @@
 
     <!-- SCRIPT DE ANIMAÇÃO + MODAL JOGADORES -->
     <script>
-        // DADOS DOS JOGADORES (MOCKUP)
+        // DADOS DOS JOGADORES (MOCKUP COMPLETO)
         const playersData = {
             'mariah': {
                 name: 'Mariah',
@@ -743,10 +806,12 @@
                 number: '01',
                 pos: 'Goleira',
                 img: 'mariah.jpeg',
-                games: 145,
-                goals: 0,
-                age: 26,
-                bio: 'A muralha do Fofinhos FC. Conhecida por seus reflexos felinos e liderança em campo. Defendeu 3 pênaltis na final de 2024.'
+                bioTitle: 'A MURALHA INTRANSPONÍVEL...',
+                bio: '<p>Mariah assumiu a titularidade absoluta desde a fundação do clube. Com reflexos apurados e uma liderança natural, tornou-se a primeira capitã da história do Fofinhos FC.</p><p>Sua atuação na final do campeonato regional, onde defendeu três pênaltis, já faz parte do folclore do clube.</p>',
+                birth: '12/05/1998',
+                location: 'SÃO PAULO, BRASIL',
+                nationality: 'BRASIL',
+                joined: '24/12/2023'
             },
             'rochedo': {
                 name: 'Rochedo',
@@ -754,10 +819,12 @@
                 number: '03',
                 pos: 'Defensor',
                 img: 'https://images.unsplash.com/photo-1566932769119-7a1b2d3876e6?q=80&w=800',
-                games: 98,
-                goals: 4,
-                age: 26,
-                bio: 'Zagueiro clássico que não perde viagem. Força física impressionante combinada com uma saída de bola refinada.'
+                bioTitle: 'SEGURANÇA E CLASSE...',
+                bio: '<p>Um zagueiro moderno, capaz de desarmar com precisão e iniciar as jogadas de ataque. Rochedo é conhecido por sua força física e leitura de jogo impecável.</p><p>Chegou ao clube vindo das categorias de base e rapidamente se estabeleceu como pilar defensivo.</p>',
+                birth: '21/11/2000',
+                location: 'RIO DE JANEIRO, BRASIL',
+                nationality: 'BRASIL',
+                joined: '10/01/2024'
             },
             'maestro': {
                 name: 'Maestro',
@@ -765,10 +832,12 @@
                 number: '10',
                 pos: 'Meio-Campo',
                 img: 'https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=800',
-                games: 182,
-                goals: 25,
-                age: 28,
-                bio: 'O cérebro do time. Cada jogada de ataque passa pelos seus pés. Visão de jogo nível europeu.'
+                bioTitle: 'VISÃO DE JOGO DE ELITE...',
+                bio: '<p>O camisa 10 clássico. Maestro dita o ritmo do jogo, distribui assistências e controla o meio-campo com elegância. Sua habilidade em bolas paradas é uma arma letal do time.</p>',
+                birth: '15/03/1997',
+                location: 'SALVADOR, BRASIL',
+                nationality: 'BRASIL',
+                joined: '24/12/2023'
             },
             'artilheiro': {
                 name: 'Artilheiro',
@@ -776,10 +845,12 @@
                 number: '09',
                 pos: 'Atacante',
                 img: 'https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=800',
-                games: 79,
-                goals: 68,
-                age: 22,
-                bio: 'Faro de gol apurado. O terror das defesas adversárias, com uma média de quase 1 gol por jogo.'
+                bioTitle: 'FARO DE GOL APURADO...',
+                bio: '<p>Nascido para marcar gols. Artilheiro combina velocidade, posicionamento e finalização cirúrgica. Já quebrou o recorde de gols em uma única temporada logo em seu ano de estreia.</p>',
+                birth: '09/09/2002',
+                location: 'BH, BRASIL',
+                nationality: 'BRASIL',
+                joined: '02/02/2024'
             }
         };
 
@@ -788,14 +859,19 @@
             if (!data) return;
 
             document.getElementById('modal-img').src = data.img;
-            document.getElementById('modal-number-bg').innerText = data.number;
-            document.getElementById('modal-pos').innerText = data.pos;
+            document.getElementById('modal-number-header').innerText = data.number;
             document.getElementById('modal-name').innerText = data.name;
             document.getElementById('modal-nickname').innerText = data.nickname;
-            document.getElementById('modal-games').innerText = data.games;
-            document.getElementById('modal-goals').innerText = data.goals;
-            document.getElementById('modal-age').innerText = data.age;
-            document.getElementById('modal-bio').innerText = data.bio;
+            document.getElementById('modal-name-footer').innerText = data.nickname;
+
+            // Campos Novos
+            document.getElementById('modal-bio-title').innerText = data.bioTitle;
+            document.getElementById('modal-bio').innerHTML = data.bio;
+            document.getElementById('modal-birth').innerText = data.birth;
+            document.getElementById('modal-location').innerText = data.location;
+            document.getElementById('modal-nationality').innerText = data.nationality;
+            document.getElementById('modal-pos').innerText = data.pos;
+            document.getElementById('modal-joined').innerText = data.joined;
 
             const modal = document.getElementById('player-modal');
             modal.classList.remove('hidden');
