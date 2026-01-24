@@ -62,8 +62,13 @@
                     animation: {
                         'float': 'float 6s ease-in-out infinite',
                         'shine': 'shine 3s infinite linear',
+                        'marquee': 'marquee 25s linear infinite',
                     },
                     keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
                             '50%': { transform: 'translateY(-10px)' },
@@ -577,6 +582,47 @@
                     <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=800"
                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =========================================================================
+         PARTNERS (CARROSSEL INFINITO)
+    ========================================================================== -->
+    <section class="py-12 border-t border-white/5 bg-black overflow-hidden relative">
+        <div class="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-black to-transparent z-10"></div>
+        <div class="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-black to-transparent z-10"></div>
+
+        <div class="container mx-auto px-6 mb-8 text-center">
+            <p class="text-xs font-bold uppercase tracking-[0.3em] text-gray-500">Parceiros Oficiais</p>
+        </div>
+
+        <div class="flex w-[200%] animate-marquee hover:[animation-play-state:paused] items-center">
+            <!-- GRUPO 1 -->
+            <div class="flex w-1/2 justify-around items-center gap-12 px-12">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/2560px-Under_armour_logo.svg.png"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Puma_logo.svg/2367px-Puma_logo.svg.png"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1024px-Emirates_logo.svg.png"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+            </div>
+            <!-- GRUPO 2 (DUPLICADO PARA EFEITO INFINITO) -->
+            <div class="flex w-1/2 justify-around items-center gap-12 px-12">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Under_armour_logo.svg/2560px-Under_armour_logo.svg.png"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Puma_logo.svg/2367px-Puma_logo.svg.png"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Emirates_logo.svg/1024px-Emirates_logo.svg.png"
+                    class="h-8 md:h-12 opacity-30 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-pointer">
             </div>
         </div>
     </section>
