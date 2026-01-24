@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,140 +24,172 @@
 
     <!-- Tailwind CSS (Via CDN para simplicidade e zero-build) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Ícones e Fontes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Oswald:wght@400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- CONFIGURAÇÃO VISUAL -->
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              club: {
-                deep: '#021024',    // Azul Quase Preto (Fundo Premium)
-                navy: '#052659',    // Azul Institucional
-                bright: '#5483B3',  // Azul Realce
-                gold: '#C5A059',    // Dourado Metálico (Elegante)
-                goldlight: '#F1E4C3' // Dourado Claro (Brilhos)
-              }
-            },
-            fontFamily: {
-              sans: ['Montserrat', 'sans-serif'],
-              display: ['Oswald', 'sans-serif'],
-            },
-            backgroundImage: {
-              'hero-gradient': 'linear-gradient(to top, #021024 10%, rgba(2,16,36,0.8) 50%, rgba(2,16,36,0.4) 100%)',
-              'gold-gradient': 'linear-gradient(135deg, #C5A059 0%, #F1E4C3 50%, #C5A059 100%)',
-            },
-            boxShadow: {
-              'glow': '0 0 20px rgba(197, 160, 89, 0.3)',
-              'neon': '0 0 10px rgba(84, 131, 179, 0.5)',
-            },
-            animation: {
-              'float': 'float 6s ease-in-out infinite',
-              'shine': 'shine 3s infinite linear',
-            },
-            keyframes: {
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-10px)' },
-              },
-              shine: {
-                '0%': { backgroundPosition: '200% center' },
-                '100%': { backgroundPosition: '-200% center' },
-              }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        club: {
+                            deep: '#021024',    // Azul Quase Preto (Fundo Premium)
+                            navy: '#052659',    // Azul Institucional
+                            bright: '#5483B3',  // Azul Realce
+                            gold: '#C5A059',    // Dourado Metálico (Elegante)
+                            goldlight: '#F1E4C3' // Dourado Claro (Brilhos)
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-gradient': 'linear-gradient(to top, #021024 10%, rgba(2,16,36,0.8) 50%, rgba(2,16,36,0.4) 100%)',
+                        'gold-gradient': 'linear-gradient(135deg, #C5A059 0%, #F1E4C3 50%, #C5A059 100%)',
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(197, 160, 89, 0.3)',
+                        'neon': '0 0 10px rgba(84, 131, 179, 0.5)',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'shine': 'shine 3s infinite linear',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        shine: {
+                            '0%': { backgroundPosition: '200% center' },
+                            '100%': { backgroundPosition: '-200% center' },
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     </script>
 
     <style>
-      /* Ajustes Finos */
-      body { background-color: #021024; color: #e2e8f0; }
-      
-      /* Scrollbar Premium */
-      ::-webkit-scrollbar { width: 8px; }
-      ::-webkit-scrollbar-track { background: #021024; }
-      ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
-      ::-webkit-scrollbar-thumb:hover { background: #C5A059; }
-      
-      /* Efeito de Reveal no Scroll */
-      .reveal {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
+        /* Ajustes Finos */
+        body {
+            background-color: #021024;
+            color: #e2e8f0;
+        }
 
-      /* Texto Vazado (Outline) */
-      .text-outline {
-        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-        color: transparent;
-      }
-      
-      /* Utilitários Visuais */
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.03);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
+        /* Scrollbar Premium */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #021024;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A059;
+        }
+
+        /* Efeito de Reveal no Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Texto Vazado (Outline) */
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+            color: transparent;
+        }
+
+        /* Utilitários Visuais */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
     </style>
 </head>
+
 <body class="antialiased selection:bg-club-gold selection:text-club-deep">
 
     <!-- =========================================================================
          NAVBAR (PREMIUM GLASS)
     ========================================================================== -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 top-0 border-b border-white/0">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="flex items-center justify-between h-16">
-          
-          <!-- LOGO -->
-          <a href="#" class="flex items-center gap-3 group">
-            <div class="relative w-12 h-12 flex items-center justify-center">
-                <!-- Brilho atrás do logo -->
-                <div class="absolute inset-0 bg-club-gold/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <!-- [IMG-LOGO] -->
-                <img src="https://cdn-icons-png.flaticon.com/512/12660/12660232.png" alt="Fofinhos FC" class="h-10 w-10 object-contain relative z-10 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300">
-            </div>
-            <div class="flex flex-col">
-                <span class="font-display font-bold text-2xl tracking-tight text-white leading-none">FOFINHOS<span class="text-club-gold">.FC</span></span>
-            </div>
-          </a>
-          
-          <!-- LINKS (DESKTOP) -->
-          <div class="hidden md:flex items-center gap-8">
-            <a href="#home" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Início</a>
-            <a href="#about" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">História</a>
-            <a href="#squad" class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Elenco</a>
-            
-            <a href="#contact" class="px-6 py-2 bg-transparent border border-club-gold text-club-gold font-bold text-xs uppercase tracking-widest hover:bg-club-gold hover:text-club-deep transition-all duration-300 rounded-sm">
-                Seja Sócio
-            </a>
-          </div>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
 
-          <!-- MOBILE MENU BUTTON -->
-          <button onclick="toggleMenu()" class="md:hidden text-white text-xl">
-            <i class="fas fa-bars"></i>
-          </button>
+                <!-- LOGO -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="relative w-12 h-12 flex items-center justify-center">
+                        <!-- Brilho atrás do logo -->
+                        <div
+                            class="absolute inset-0 bg-club-gold/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <!-- [IMG-LOGO] -->
+                        <img src="https://cdn-icons-png.flaticon.com/512/12660/12660232.png" alt="Fofinhos FC"
+                            class="h-10 w-10 object-contain relative z-10 brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300">
+                    </div>
+                    <div class="flex flex-col">
+                        <span
+                            class="font-display font-bold text-2xl tracking-tight text-white leading-none">FOFINHOS<span
+                                class="text-club-gold">.FC</span></span>
+                    </div>
+                </a>
+
+                <!-- LINKS (DESKTOP) -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="#home"
+                        class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Início</a>
+                    <a href="#about"
+                        class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">História</a>
+                    <a href="#squad"
+                        class="text-sm font-bold uppercase tracking-widest text-gray-400 hover:text-white transition-colors relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-0.5 after:bg-club-gold after:transition-all hover:after:w-full">Elenco</a>
+
+                    <a href="#contact"
+                        class="px-6 py-2 bg-transparent border border-club-gold text-club-gold font-bold text-xs uppercase tracking-widest hover:bg-club-gold hover:text-club-deep transition-all duration-300 rounded-sm">
+                        Seja Sócio
+                    </a>
+                </div>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button onclick="toggleMenu()" class="md:hidden text-white text-xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
         </div>
-      </div>
-      
-      <!-- MOBILE MENU -->
-      <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-club-deep/95 backdrop-blur-xl border-b border-white/10 py-4 md:hidden">
-          <a href="#home" class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Início</a>
-          <a href="#about" class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">História</a>
-          <a href="#squad" class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Elenco</a>
-      </div>
+
+        <!-- MOBILE MENU -->
+        <div id="mobile-menu"
+            class="hidden absolute top-full left-0 w-full bg-club-deep/95 backdrop-blur-xl border-b border-white/10 py-4 md:hidden">
+            <a href="#home"
+                class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Início</a>
+            <a href="#about"
+                class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">História</a>
+            <a href="#squad"
+                class="block py-3 px-6 text-white font-display text-xl border-l-4 border-transparent hover:border-club-gold hover:bg-white/5">Elenco</a>
+        </div>
     </nav>
 
     <!-- =========================================================================
@@ -166,36 +199,43 @@
         <!-- Background Imagem + Overlay -->
         <div class="absolute inset-0 z-0">
             <!-- [IMG-HERO] -->
-            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=2560&auto=format&fit=crop" 
-                 class="w-full h-full object-cover opacity-60 scale-105 animate-[float_20s_ease-in-out_infinite_alternate]" 
-                 alt="Estádio">
+            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?q=80&w=2560&auto=format&fit=crop"
+                class="w-full h-full object-cover opacity-60 scale-105 animate-[float_20s_ease-in-out_infinite_alternate]"
+                alt="Estádio">
             <div class="absolute inset-0 bg-hero-gradient"></div>
         </div>
 
-        <div class="relative z-10 container mx-auto px-6 text-center mt-20">
-            <span class="reveal inline-block mb-6 px-4 py-1 rounded-full border border-club-gold/30 bg-club-gold/10 text-club-gold text-xs font-bold tracking-[0.3em] uppercase backdrop-blur-md">
-                Temporada 2024/2025
-            </span>
-            
-            <h1 class="reveal delay-[100ms] text-7xl md:text-[9rem] font-display font-bold text-white leading-[0.85] tracking-tighter mb-6 drop-shadow-2xl">
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto mt-10 animate-fadeIn">
+            <div
+                class="inline-block mb-4 px-6 py-2 rounded-full border border-fofinhos-gold/50 bg-black/40 backdrop-blur-sm">
+                <span class="text-fofinhos-gold font-bold tracking-[0.2em] uppercase text-sm">Temporada 2024/25</span>
+            </div>
+
+            <h1
+                class="reveal delay-[100ms] text-7xl md:text-[9rem] font-display font-bold text-white leading-[0.85] tracking-tighter mb-6 drop-shadow-2xl">
                 GARRA <span class="text-outline text-transparent">&</span><br>
-                <span class="text-transparent bg-clip-text bg-gold-gradient bg-[length:200%_auto] animate-shine">GLÓRIA</span>
+                <span
+                    class="text-transparent bg-clip-text bg-gold-gradient bg-[length:200%_auto] animate-shine">GLÓRIA</span>
             </h1>
-            
-            <p class="reveal delay-[200ms] text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
-                Mais que um time, uma religião. O <strong class="text-white">Fofinhos FC</strong> reescreve a história do futebol com paixão, técnica e o rugido que ecoa nas arquibancadas.
+
+            <p
+                class="reveal delay-[200ms] text-gray-300 text-lg md:text-xl font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+                Mais que um time, uma religião. O <strong class="text-white">Fofinhos FC</strong> reescreve a história
+                do futebol com paixão, técnica e o rugido que ecoa nas arquibancadas.
             </p>
 
             <div class="reveal delay-[300ms] flex flex-col md:flex-row justify-center gap-4">
-                <button onclick="document.getElementById('squad').scrollIntoView()" 
-                        class="group relative px-8 py-4 bg-club-gold text-club-deep font-bold font-display text-xl uppercase tracking-wider overflow-hidden transition-all hover:shadow-glow hover:-translate-y-1">
-                    <span class="relative z-10 flex items-center gap-2">Conhecer Elenco <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
+                <button onclick="document.getElementById('squad').scrollIntoView()"
+                    class="group relative px-8 py-4 bg-club-gold text-club-deep font-bold font-display text-xl uppercase tracking-wider overflow-hidden transition-all hover:shadow-glow hover:-translate-y-1">
+                    <span class="relative z-10 flex items-center gap-2">Conhecer Elenco <i
+                            class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
                 </button>
             </div>
         </div>
-        
+
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/30 text-xs uppercase tracking-widest">
+        <div
+            class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/30 text-xs uppercase tracking-widest">
             Role para descobrir
         </div>
     </header>
@@ -231,34 +271,42 @@
     ========================================================================== -->
     <section id="about" class="py-32 relative overflow-hidden">
         <!-- Elemento Decorativo -->
-        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-club-navy rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/2"></div>
+        <div
+            class="absolute top-0 right-0 w-[500px] h-[500px] bg-club-navy rounded-full blur-[120px] opacity-20 -translate-y-1/2 translate-x-1/2">
+        </div>
 
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row items-center gap-20">
                 <div class="w-full md:w-1/2 reveal">
                     <div class="relative">
-                        <div class="absolute -inset-4 border border-club-gold/20 rounded-sm translate-x-4 translate-y-4"></div>
+                        <div
+                            class="absolute -inset-4 border border-club-gold/20 rounded-sm translate-x-4 translate-y-4">
+                        </div>
                         <!-- [IMG-ABOUT] -->
-                        <img src="https://images.unsplash.com/photo-1522778119026-d647f0565c6a?q=80&w=800&auto=format&fit=crop" 
-                             class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10" 
-                             alt="Time Reunido">
+                        <img src="https://images.unsplash.com/photo-1522778119026-d647f0565c6a?q=80&w=800&auto=format&fit=crop"
+                            class="w-full h-auto grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl relative z-10"
+                            alt="Time Reunido">
                     </div>
                 </div>
-                
+
                 <div class="w-full md:w-1/2 reveal">
                     <h4 class="text-club-gold font-bold tracking-[0.2em] uppercase text-sm mb-4">Sobre Nós</h4>
                     <h2 class="text-5xl lg:text-6xl font-display font-bold text-white mb-8 leading-none">
                         NASCE UMA <br><span class="text-club-bright">DINASTIA</span>
                     </h2>
                     <p class="text-gray-400 text-lg leading-relaxed mb-6">
-                        O <strong class="text-white">Fofinhos FC</strong> não é apenas um time; é o resultado de uma promessa feita em família. Nascido no coração do Natal, às 00:48 do dia 24 de dezembro de 2023.
+                        O <strong class="text-white">Fofinhos FC</strong> não é apenas um time; é o resultado de uma
+                        promessa feita em família. Nascido no coração do Natal, às 00:48 do dia 24 de dezembro de 2023.
                     </p>
                     <p class="text-gray-400 text-lg leading-relaxed mb-8">
-                        Sob o apelido de <strong>The Lions</strong>, carregamos no peito o escudo da garra e a proteção do nosso mascote, o Lionzinho — um leão que personifica a força necessária para vencer qualquer desafio.
+                        Sob o apelido de <strong>The Lions</strong>, carregamos no peito o escudo da garra e a proteção
+                        do nosso mascote, o Lionzinho — um leão que personifica a força necessária para vencer qualquer
+                        desafio.
                     </p>
-                    
+
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-club-gold/10 flex items-center justify-center text-club-gold">
+                        <div
+                            class="w-12 h-12 rounded-full bg-club-gold/10 flex items-center justify-center text-club-gold">
                             <i class="fas fa-crown"></i>
                         </div>
                         <div>
@@ -278,7 +326,8 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                 <div class="reveal">
-                    <h3 class="text-5xl font-display font-bold text-white">ELENCO <span class="text-club-gold">PRINCIPAL</span></h3>
+                    <h3 class="text-5xl font-display font-bold text-white">ELENCO <span
+                            class="text-club-gold">PRINCIPAL</span></h3>
                     <p class="text-gray-500 mt-2 max-w-md">Conheça os guerreiros que defendem nossas cores em campo.</p>
                 </div>
                 <div class="hidden md:block w-32 h-[1px] bg-white/20 mb-4 reveal"></div>
@@ -289,70 +338,121 @@
                 <!-- Jogador 1 -->
                 <div class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal">
                     <!-- Imagem -->
-                    <img src="mariah.jpeg" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" alt="Mariah">
+                    <img src="mariah.jpeg"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                        alt="Mariah">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    
+
                     <!-- Numero -->
-                    <span class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">01</span>
+                    <span
+                        class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">01</span>
 
                     <!-- Infos -->
-                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest bg-club-gold text-club-deep">Goleira</span>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                        <span
+                            class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest bg-club-gold text-club-deep">Goleira</span>
                         <h3 class="text-3xl font-display font-bold text-white leading-none mb-1">MARIAH</h3>
                         <p class="text-white/50 text-sm uppercase tracking-wider mb-6">Paredão</p>
-                        
+
                         <!-- Stats Ocultos -->
-                        <div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                            <div><p class="text-white font-bold">145</p><p class="text-[9px] text-gray-500 uppercase">Jogos</p></div>
-                            <div><p class="text-white font-bold">PCT</p><p class="text-[9px] text-gray-500 uppercase">Defesas</p></div>
+                        <div
+                            class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <div>
+                                <p class="text-white font-bold">145</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Jogos</p>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">PCT</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Defesas</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Jogador 2 -->
-                <div class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal transition-delay-100">
-                    <img src="https://images.unsplash.com/photo-1566932769119-7a1b2d3876e6?q=80&w=800" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" alt="Jogador">
+                <div
+                    class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal transition-delay-100">
+                    <img src="https://images.unsplash.com/photo-1566932769119-7a1b2d3876e6?q=80&w=800"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                        alt="Jogador">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <span class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">03</span>
-                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white">Defensor</span>
+                    <span
+                        class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">03</span>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                        <span
+                            class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white">Defensor</span>
                         <h3 class="text-3xl font-display font-bold text-white leading-none mb-1">ROCHEDO</h3>
                         <p class="text-white/50 text-sm uppercase tracking-wider mb-6">Silva</p>
-                        <div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                            <div><p class="text-white font-bold">98</p><p class="text-[9px] text-gray-500 uppercase">Jogos</p></div>
-                            <div><p class="text-white font-bold">4</p><p class="text-[9px] text-gray-500 uppercase">Gols</p></div>
+                        <div
+                            class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <div>
+                                <p class="text-white font-bold">98</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Jogos</p>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">4</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Gols</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Jogador 3 -->
-                <div class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal transition-delay-200">
-                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=800" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" alt="Jogador">
+                <div
+                    class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal transition-delay-200">
+                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=800"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                        alt="Jogador">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <span class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">10</span>
-                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white">Meio</span>
+                    <span
+                        class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">10</span>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                        <span
+                            class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white">Meio</span>
                         <h3 class="text-3xl font-display font-bold text-white leading-none mb-1">MAESTRO</h3>
                         <p class="text-white/50 text-sm uppercase tracking-wider mb-6">Júnior</p>
-                        <div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                            <div><p class="text-white font-bold">182</p><p class="text-[9px] text-gray-500 uppercase">Jogos</p></div>
-                            <div><p class="text-white font-bold">68</p><p class="text-[9px] text-gray-500 uppercase">Assist</p></div>
+                        <div
+                            class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <div>
+                                <p class="text-white font-bold">182</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Jogos</p>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">68</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Assist</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Jogador 4 -->
-                <div class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal transition-delay-300">
-                    <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=800" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100" alt="Jogador">
+                <div
+                    class="group relative h-[500px] overflow-hidden bg-club-navy/20 cursor-pointer reveal transition-delay-300">
+                    <img src="https://images.unsplash.com/photo-1543326727-cf6c39e8f84c?q=80&w=800"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                        alt="Jogador">
                     <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
-                    <span class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">09</span>
-                    <div class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                        <span class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white">Atacante</span>
+                    <span
+                        class="absolute top-4 right-4 text-6xl font-display font-bold text-white/5 group-hover:text-club-gold/20 transition-colors">09</span>
+                    <div
+                        class="absolute bottom-0 left-0 w-full p-6 translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+                        <span
+                            class="inline-block px-2 py-1 mb-2 text-[10px] font-bold uppercase tracking-widest border border-white/20 text-white">Atacante</span>
                         <h3 class="text-3xl font-display font-bold text-white leading-none mb-1">ARTILHEIRO</h3>
                         <p class="text-white/50 text-sm uppercase tracking-wider mb-6">Matador</p>
-                        <div class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                            <div><p class="text-white font-bold">79</p><p class="text-[9px] text-gray-500 uppercase">Jogos</p></div>
-                            <div><p class="text-white font-bold">68</p><p class="text-[9px] text-gray-500 uppercase">Gols</p></div>
+                        <div
+                            class="grid grid-cols-3 gap-2 border-t border-white/10 pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                            <div>
+                                <p class="text-white font-bold">79</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Jogos</p>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold">68</p>
+                                <p class="text-[9px] text-gray-500 uppercase">Gols</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -366,26 +466,32 @@
     ========================================================================== -->
     <section class="py-24 bg-club-deep">
         <div class="container mx-auto px-6">
-            <h3 class="text-center font-display font-bold text-4xl text-white mb-12 tracking-wide reveal">NO <span class="text-club-gold">DETALHE</span></h3>
-            
+            <h3 class="text-center font-display font-bold text-4xl text-white mb-12 tracking-wide reveal">NO <span
+                    class="text-club-gold">DETALHE</span></h3>
+
             <div class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 gap-2 h-[600px]">
                 <!-- Item Grande -->
                 <div class="col-span-2 row-span-2 relative group overflow-hidden reveal">
-                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=800"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
                 <!-- Itens Menores -->
                 <div class="col-span-1 row-span-1 relative group overflow-hidden reveal">
-                    <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <img src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?q=80&w=800"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
                 </div>
                 <div class="col-span-1 row-span-1 relative group overflow-hidden reveal">
-                    <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?q=80&w=800"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
                 </div>
                 <div class="col-span-1 row-span-1 relative group overflow-hidden reveal">
-                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
                 </div>
                 <div class="col-span-1 row-span-1 relative group overflow-hidden reveal">
-                    <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=800" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
+                    <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?q=80&w=800"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100">
                 </div>
             </div>
         </div>
@@ -397,25 +503,30 @@
     <footer id="contact" class="bg-black py-16 border-t border-white/5">
         <div class="container mx-auto px-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-                
+
                 <div class="text-center md:text-left">
-                    <h2 class="text-3xl font-display font-bold text-white mb-2">FOFINHOS<span class="text-club-gold">.FC</span></h2>
-                    <p class="text-gray-600 text-sm max-w-xs">Honra e glória em cada jogada. O clube que nasceu para brilhar.</p>
+                    <h2 class="text-3xl font-display font-bold text-white mb-2">FOFINHOS<span
+                            class="text-club-gold">.FC</span></h2>
+                    <p class="text-gray-600 text-sm max-w-xs">Honra e glória em cada jogada. O clube que nasceu para
+                        brilhar.</p>
                 </div>
 
                 <div class="flex gap-6">
-                    <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="#" class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
                         <i class="fab fa-youtube"></i>
                     </a>
                 </div>
             </div>
-            
+
             <div class="mt-16 pt-8 border-t border-white/5 text-center text-gray-700 text-xs uppercase tracking-widest">
                 &copy; 2026 Fofinhos FC. Developed with Passion.
             </div>
@@ -461,4 +572,5 @@
         }
     </script>
 </body>
+
 </html>
