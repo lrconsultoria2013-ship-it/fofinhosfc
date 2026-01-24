@@ -717,12 +717,20 @@
 
                         <h5 id="modal-bio-title" class="font-bold text-club-deep text-lg uppercase mb-4">DEFENSOR
                             CORAJOSO E DECISIVO...</h5>
-                        <div id="modal-bio" class="text-gray-600 space-y-4 text-justify leading-relaxed font-light">
-                            <!-- Texto inserido via JS -->
+                        <div id="modal-bio-container"
+                            class="relative max-h-[200px] overflow-hidden transition-all duration-500">
+                            <div id="modal-bio"
+                                class="text-gray-800 space-y-4 text-justify leading-relaxed font-normal text-sm md:text-base">
+                                <!-- Texto inserido via JS -->
+                            </div>
+                            <!-- Gradiente para efeito de 'fade out' quando fechado -->
+                            <div id="modal-bio-fade"
+                                class="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-t from-white to-transparent pointer-events-none">
+                            </div>
                         </div>
 
-                        <button
-                            class="mt-8 px-8 py-3 bg-transparent border border-club-deep text-club-deep font-bold uppercase tracking-widest hover:bg-club-deep hover:text-white transition-all text-xs">
+                        <button id="modal-read-more-btn" onclick="toggleReadMore()"
+                            class="mt-4 px-6 py-2 bg-transparent border border-club-deep text-club-deep font-bold uppercase tracking-widest hover:bg-club-deep hover:text-white transition-all text-xs rounded-sm">
                             LEIA MAIS
                         </button>
                     </div>
@@ -838,23 +846,23 @@
                 img: 'everaldo Jr.jpeg',
                 bioTitle: 'A LENDA DE ROVANIEMI...',
                 bio: `
-                    <p class="mb-2">Nascido na terra do Papai Noel, Everaldo construiu uma carreira lendária. Começou na base do <strong>Ajax</strong> e se aposentou como ídolo no <strong>Santa Claus FC</strong>.</p>
+                    <p class="mb-4 font-medium text-gray-800">Nascido na terra do Papai Noel, Everaldo construiu uma carreira lendária. Começou na base do <strong>Ajax</strong> e se aposentou como ídolo no <strong>Santa Claus FC</strong>.</p>
                     
-                    <div class="bg-gray-50 p-2 rounded mb-2 border border-gray-100">
-                        <strong class="block text-club-deep text-[10px] uppercase tracking-wider mb-1">Como Jogador (Resumo)</strong>
-                        <ul class="text-[10px] space-y-1 text-gray-600">
-                            <li>• <strong>Total:</strong> 1.737 jogos, 663 gols, 598 assistências.</li>
-                            <li>• <strong>Clubes:</strong> Ajax, Santa Claus FC, Mariehamn, Aix, Sete de Setembro.</li>
-                            <li>• <strong>Seleção (Finlândia):</strong> 337 jogos, 362 gols (Recorde Histórico).</li>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4 border-l-4 border-club-gold shadow-sm">
+                        <strong class="block text-club-deep font-bold uppercase tracking-wider mb-2 text-sm border-b border-gray-300 pb-1">Como Jogador (Resumo)</strong>
+                        <ul class="text-sm space-y-2 text-gray-900 font-medium list-disc pl-4">
+                            <li><strong>Total Assustador:</strong> 1.737 jogos, 663 gols, 598 assistências.</li>
+                            <li><strong>Clubes Principais:</strong> Ajax, Santa Claus FC, Mariehamn, Aix, Sete de Setembro.</li>
+                            <li><strong>Seleção (Finlândia):</strong> 337 jogos, 362 gols (Recorde Histórico Insuperável).</li>
                         </ul>
                     </div>
 
-                    <div class="bg-gray-50 p-2 rounded border border-gray-100">
-                        <strong class="block text-club-deep text-[10px] uppercase tracking-wider mb-1">Como Treinador (2023-26)</strong>
-                        <ul class="text-[10px] space-y-1 text-gray-600">
-                            <li>• <strong>Fofinhos FC:</strong> 4.672 jogos, 3.589 vitórias.</li>
-                            <li>• <strong>Aproveitamento:</strong> Lendário (apenas 60 derrotas).</li>
-                            <li>• <strong>Seleção Argentina (2020):</strong> 100% de aproveitamento (3 jogos).</li>
+                    <div class="bg-gray-100 p-4 rounded-lg border-l-4 border-club-deep shadow-sm">
+                        <strong class="block text-club-deep font-bold uppercase tracking-wider mb-2 text-sm border-b border-gray-300 pb-1">Como Treinador (2023-26)</strong>
+                        <ul class="text-sm space-y-2 text-gray-900 font-medium list-disc pl-4">
+                            <li><strong>Fofinhos FC:</strong> 4.672 jogos comandados, 3.589 vitórias.</li>
+                            <li><strong>Aproveitamento:</strong> Lendário (apenas 60 derrotas em 4 anos).</li>
+                            <li><strong>Seleção Argentina (2020):</strong> 100% de aproveitamento (3 vitórias).</li>
                         </ul>
                     </div>
                 `,
@@ -939,12 +947,38 @@
             document.getElementById('modal-pos').innerText = data.pos;
             document.getElementById('modal-joined').innerText = data.joined;
 
+            // Resetar Scroll e Leia Mais ao abrir
+            const bioContainer = document.getElementById('modal-bio-container');
+            const bioFade = document.getElementById('modal-bio-fade');
+            const readMoreBtn = document.getElementById('modal-read-more-btn');
+
+            bioContainer.style.maxHeight = '200px';
+            bioFade.classList.remove('hidden');
+            readMoreBtn.innerText = 'LEIA MAIS';
+            readMoreBtn.classList.remove('hidden');
+
             const modal = document.getElementById('player-modal');
             modal.classList.remove('hidden');
         }
 
         function closePlayerModal() {
             document.getElementById('player-modal').classList.add('hidden');
+        }
+
+        function toggleReadMore() {
+            const container = document.getElementById('modal-bio-container');
+            const fade = document.getElementById('modal-bio-fade');
+            const btn = document.getElementById('modal-read-more-btn');
+
+            if (container.style.maxHeight === 'none') {
+                container.style.maxHeight = '200px';
+                fade.classList.remove('hidden');
+                btn.innerText = 'LEIA MAIS';
+            } else {
+                container.style.maxHeight = 'none';
+                fade.classList.add('hidden');
+                btn.innerText = 'MENOS';
+            }
         }
 
         // Lógica de Reveal
