@@ -245,6 +245,72 @@
                             class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i></span>
                 </button>
             </div>
+
+            <!-- NEXT MATCH BANNER (Customizável) -->
+            <div class="reveal delay-[500ms] mt-16 w-full max-w-4xl mx-auto">
+                <div
+                    class="glass-panel rounded-xl p-1 border-t border-club-gold/30 relative overflow-hidden group hover:border-club-gold/60 transition-colors duration-500">
+                    <!-- Background Glow -->
+                    <div
+                        class="absolute inset-0 bg-gradient-to-r from-transparent via-club-gold/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-[2s]">
+                    </div>
+
+                    <div
+                        class="bg-club-deep/80 backdrop-blur-md rounded-lg p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative z-10">
+
+                        <!-- HEADLINE -->
+                        <div class="text-center md:text-left shrink-0">
+                            <span class="block text-club-gold text-xs font-bold tracking-[0.2em] uppercase mb-1">Próximo
+                                Confronto</span>
+                            <div class="flex items-center gap-2 text-white/50 text-xs uppercase tracking-widest">
+                                <i class="far fa-calendar-alt"></i>
+                                <span id="next-match-date">SÁB, 02 MAR</span>
+                                <span class="mx-1">•</span>
+                                <i class="far fa-clock"></i>
+                                <span id="next-match-time">15:00</span>
+                            </div>
+                        </div>
+
+                        <!-- MATCH UP -->
+                        <div class="flex items-center gap-4 md:gap-8 flex-1 justify-center relative">
+                            <!-- HOME -->
+                            <div class="flex flex-col items-center gap-2">
+                                <img src="Gemini_Generated_Image_ryvi91ryvi91ryvi-removebg-preview.png"
+                                    class="w-12 h-12 md:w-16 md:h-16 object-contain drop-shadow-lg">
+                                <span
+                                    class="text-white font-bold text-xs uppercase tracking-wider hidden md:block">Fofinhos</span>
+                            </div>
+
+                            <!-- VS -->
+                            <div class="flex flex-col items-center">
+                                <span class="text-4xl md:text-5xl font-display font-bold text-white/20 italic">VS</span>
+                            </div>
+
+                            <!-- AWAY (Adversário) -->
+                            <div class="flex flex-col items-center gap-2">
+                                <!-- Ícone Genérico ou Logo do Adversário -->
+                                <div id="next-match-opponent-logo-container"
+                                    class="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-white/5 rounded-full border border-white/10">
+                                    <i class="fas fa-shield-alt text-2xl text-gray-400"></i>
+                                </div>
+                                <span id="next-match-opponent-name"
+                                    class="text-white font-bold text-xs uppercase tracking-wider hidden md:block">Adversário</span>
+                            </div>
+                        </div>
+
+                        <!-- LOCATION & INFO -->
+                        <div class="text-center md:text-right shrink-0">
+                            <span id="next-match-location"
+                                class="block text-white font-bold uppercase tracking-wide text-sm mb-1">Arena
+                                Fofinhos</span>
+                            <span id="next-match-round"
+                                class="block text-club-bright text-xs font-bold uppercase tracking-wider">Final
+                                Regional</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
 
